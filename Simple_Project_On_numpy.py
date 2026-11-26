@@ -13,13 +13,13 @@ print(f"Image_Type is {array.dtype}")
 #increase brightness
 Brightness_array = array.astype(np.float32) + 10
 Brightness_array=np.clip(Brightness_array,0,255).astype(np.uint8)
-# Image.fromarray(Brightness_array).show()
+Image.fromarray(Brightness_array).show()
 
 
 #Grayscale Conversion
 gray_img= array.mean(axis=2)
 print(f"gray average shape is {gray_img.shape}")
-# Image.fromarray(gray_img).show()
+Image.fromarray(gray_img).show()
 
 #Grayscale Conversion with equations
 Red = array[:,:,0]
@@ -28,23 +28,23 @@ Blue = array[:,:,2]
 
 gray_img_with_equation =  0.299 * Red + 0.587 * Green +0.114 * Blue
 print("gray image shape is",gray_img_with_equation.shape)
-# Image.fromarray(gray_img).show()
+Image.fromarray(gray_img).show()
 
 
 #Flip the image horizontally and vertically
 image_Horizontal = array[::-1,:,:]
 print(image_Horizontal.shape)
-# Image.fromarray(image_Horizontal).show()
+Image.fromarray(image_Horizontal).show()
 
 image_vertical = array[:,::-1,:]
 print(image_vertical.shape)
-# Image.fromarray(image_vertical).show()
+Image.fromarray(image_vertical).show()
 
 
 #Image Cropping & View
 crop = array[128:384, 127:381, :].copy()
 print("Croping shape = ",crop.shape)
-# Image.fromarray(crop).show()
+Image.fromarray(crop).show()
 
 
 
